@@ -128,8 +128,6 @@ Hint-based Reinforcement Learning (Current Survey Structure)
 
 > Trajectory Injection places a trajectory segment in the input context while the policy still generates a full response.
 
-[![Code](https://img.shields.io/badge/Code-GitHub-blue)]()
-
 | Abbr. | Paper | Data (1st time) | Publication | Resources |
 |-|-|:-:|:-:|:-:|
 | BREAD | 🌕️ [BREAD: Branched Rollouts from Expert Anchors Bridge SFT & RL for Reasoning](https://openreview.net/forum?id=NUDaln2vCe) | 2025.6 | NeurIPS 2025 |  |
@@ -143,4 +141,22 @@ Hint-based Reinforcement Learning (Current Survey Structure)
 | POPE | 🌕️ [POPE: Learning to Reason on Hard Problems via Privileged On-Policy Exploration](https://arxiv.org/abs/2601.18779) | 2026.1 | arXiv preprint | [![Code](https://img.shields.io/badge/Code-GitHub-blue)](https://github.com/CMU-AIRe/POPE) |
 | HiPO | 🌕️ [HiPO: Self-Hint Policy Optimization for RLVR](https://openreview.net/forum?id=rcb20pHmT1) | 2026.2 | ICLR 2026 |  |
 | PROS | 🌕️ [PROS: Towards Compute-Efficient RLVR via Rollout Prefix Reuse](https://openreview.net/forum?id=lz1SRTcnUb) | 2026.2 | ICLR 2026 |  |
+
+#### §3.1.1 Trajectory Continuation
+
+[![Code](https://img.shields.io/badge/Code-GitHub-blue)]()
+
+> Trajectory Continuation uses a trajectory prefix as a fixed generation context and trains the policy to complete the suffix. The main design variable is how much prefix to reveal during training.
+
+| Abbr. | Paper | Data (1st time) | Publication | Resources |
+|-|-|:-:|:-:|:-:|
+| Hint-GRPO | 🌕️ [Boosting MLLM Reasoning with Text-Debiased Hint-GRPO](https://openaccess.thecvf.com/content/ICCV2025/papers/Huang_Boosting_MLLM_Reasoning_with_Text-Debiased_Hint-GRPO_ICCV_2025_paper.pdf) | 2025.5 | ICCV 2025 | [![Code](https://img.shields.io/badge/Code-GitHub-blue)](https://github.com/hqhQAQ/Hint-GRPO) |
+| UFT | 🌕️ [UFT: Unifying Supervised and Reinforcement Fine-Tuning](https://openreview.net/forum?id=usOkGv1S7M) | 2025.5 | NeurIPS 2025 | [![Code](https://img.shields.io/badge/Code-GitHub-blue)](https://github.com/liumy2010/UFT) |
+| Prefix-RFT | 🌕️ [Blending Supervised and Reinforcement Fine-Tuning with Prefix Sampling](https://arxiv.org/abs/2507.01679) | 2025.7 | ICML 2026 |  |
+| StepHint | 🌕️ [StepHint: Multi-level Stepwise Hints Enhance Reinforcement Learning to Reason](https://arxiv.org/abs/2507.02841) | 2025.7 | ACL 2026 |  |
+| EvoCoT | 🌕️ [EvoCoT: Overcoming the Exploration Bottleneck in Reinforcement Learning for LLMs](https://arxiv.org/abs/2508.07809) | 2025.8 | ACL 2026 | [![Code](https://img.shields.io/badge/Code-GitHub-blue)](https://github.com/gtxygyzb/EvoCoT) |
+| G²RPO-A | 🌕️ [G²RPO-A: Guided Group Relative Policy Optimization with Adaptive Guidance](https://arxiv.org/abs/2508.13023) | 2025.8 | ACL 2026 | [![Code](https://img.shields.io/badge/Code-GitHub-blue)](https://github.com/T-Lab-CUHKSZ/G2RPO-A) |
+| ADHint | 🌕️ [ADHint: Adaptive Hints with Difficulty Priors for Reinforcement Learning](https://arxiv.org/abs/2512.13095) | 2025.12 | arXiv preprint |  |
+| TRAPO | 🌕️ [Trust-Region Adaptive Policy Optimization](https://openreview.net/forum?id=oXlSEcxD6N) | 2025.12 | ICLR 2026 | [![Code](https://img.shields.io/badge/Code-GitHub-blue)](https://github.com/Su-my/TRAPO) |
+| BHA | 🌕️ [Mitigating Distribution Sharpening in Math RLVR via Distribution-Aligned Hint Synthesis and Backward Hint Annealing](https://arxiv.org/abs/2604.07747) | 2026.4 | arXiv preprint |  |
 
