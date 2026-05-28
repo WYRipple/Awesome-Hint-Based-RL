@@ -168,7 +168,7 @@ Hint-based Reinforcement Learning (Current Survey Structure)
 | ANCHOR | 🌕️ [Toward Honest Language Models for Deductive Reasoning](https://arxiv.org/abs/2511.09222) | 2025.11 | arXiv preprint |  |
 | HiPO | 🌕️ [HiPO: Self-Hint Policy Optimization for RLVR](https://openreview.net/forum?id=rcb20pHmT1) | 2026.2 | ICLR 2026 |  |
 | SCOPE | 🌕️ [Recycling Failures: Salvaging Exploration in RLVR via Fine-Grained Off-Policy Guidance](https://arxiv.org/abs/2602.24110) | 2026.2 | arXiv preprint |  |
-| HAPO | 🌕️ [Hindsight-Anchored Policy Optimization: Turning Failure into Feedback in Sparse Reward Settings](https://openreview.net/forum?id=86xIZZ9lnT#discussion) | 2026.3 | ICLR-workshop 2026 |  |
+| HAPO | 🌕️ [Hindsight-Anchored Policy Optimization: Turning Failure into Feedback in Sparse Reward Settings](https://openreview.net/forum?id=86xIZZ9lnT#discussion) | 2026.3 | ICLR 2026 workshop |  |
 | S-GRPO | 🌕️ [S-GRPO: Unified Post-Training for Large Vision-Language Models](https://arxiv.org/abs/2604.16557) | 2026.4 | arXiv preprint |  |
 
 #### §3.1.4 Trajectory Optimization
@@ -228,8 +228,6 @@ Hint-based Reinforcement Learning (Current Survey Structure)
 
 > Scaffold Optimization keeps the policy scaffold-free at inference, converting behavior generated under scaffold conditions into auxiliary training signals for the unguided policy.
 
-[![Code](https://img.shields.io/badge/Code-GitHub-blue)]()
-
 
 | Abbr. | Paper | Data (1st time) | Publication | Resources |
 |-|-|:-:|:-:|:-:|
@@ -242,6 +240,127 @@ Hint-based Reinforcement Learning (Current Survey Structure)
 | HDPO | 🌕️ [HDPO: Hybrid Distillation Policy Optimization via Privileged Self-Distillation](https://arxiv.org/abs/2603.23871) | 2026.3 | arXiv preprint |  |
 
 
+## §4 Task-level Hints
+
+> **Task-level hints** extend sample-specific hints into a cross-sample hint base, enabling experience reuse across samples during training. As such hints are inherently cross-sample, they are also termed Experience. We branch primarily by whether the base is updated during training, and further subdivide by utilization method and content.
+
+### §4.1 Static Experience Base
+
+> **Static experience base** methods construct the experience base before target RL training and keep it fixed during policy optimization. During training, they retrieve relevant experience by task, domain, or similarity and use it as an additional condition for the current training sample.
+
+
+| Abbr. | Paper | Data (1st time) | Publication | Resources |
+|-|-|:-:|:-:|:-:|
+| TemplateRL | 🌕️ [TemplateRL: Structured Template-Guided Reinforcement Learning for LLM Reasoning](https://arxiv.org/abs/2505.15692) | 2025.5 | ACL 2026 |  |
+| ICPO | 🌕️ [Think Outside the Policy: In-Context Steered Policy Optimization](https://arxiv.org/abs/2510.26519) | 2025.10 | ACL 2026 | [![Code](https://img.shields.io/badge/Code-GitHub-blue)](https://github.com/Celine-hxy/ICPO) |
+| CBRL | 🌕️ [Context Bootstrapped Reinforcement Learning](https://arxiv.org/abs/2603.18953) | 2026.3 | arXiv preprint | [![Code](https://img.shields.io/badge/Code-GitHub-blue)](https://github.com/context-bootstrapped-rl/cbrl) |
+| SKILL0 | 🌕️ [SKILL0: In-Context Agentic Reinforcement Learning for Skill Internalization](https://arxiv.org/abs/2604.02268) | 2026.4 | arXiv preprint | [![Code](https://img.shields.io/badge/Code-GitHub-blue)](https://github.com/ZJU-REAL/SkillZero) |
+
+### §4.2 Evolving Experience Base
+
+> Evolving experience base methods add, modify, remove, or reconstruct experience entries during RL training, allowing hints to evolve with policy optimization. Compared with static experience bases, they adapt to the changing capability boundary of the policy and preserve the usefulness of experience hints.
+
+#### §4.2.1 Accumulative Experience Base
+
+> Accumulative experience base methods continuously add new experience from training interactions into the experience base, ensuring that newly discovered hints can be retained and reused.
+
+| Abbr. | Paper | Data (1st time) | Publication | Resources |
+|-|-|:-:|:-:|:-:|
+| EvolveR | 🌕️ [EvolveR: Self-Evolving LLM Agents through an Experience-Driven Lifecycle](https://arxiv.org/abs/2510.16079) | 2025.10 | ICML 2026 | [![Code](https://img.shields.io/badge/Code-GitHub-blue)](https://github.com/KnowledgeXLab/EvolveR) |
+| CRMWeaver | 🌕️ [CRMWeaver: Building Powerful Business Agent via Agentic RL and Shared Memories](https://arxiv.org/abs/2510.25333) | 2025.10 | arXiv preprint |  |
+| ERL | 🌕️ [Experiential Reinforcement Learning](https://arxiv.org/abs/2602.13949) | 2026.2 | arXiv preprint | [![Code](https://img.shields.io/badge/Code-GitHub-blue)](https://github.com/microsoft/experiential_rl) |
+| SGE | 🌕️ [Expanding LLM Agent Boundaries with Strategy-Guided Exploration](https://arxiv.org/abs/2603.02045) | 2026.3 | arXiv preprint |  |
+| MAGE | 🌕️ [MAGE: Meta-Reinforcement Learning for Language Agents toward Strategic Exploration and Exploitation](https://openreview.net/forum?id=39tQ6si2EK) | 2026.3 | ICLR 2026 Workshop | [![Code](https://img.shields.io/badge/Code-GitHub-blue)](https://github.com/Lu-Yang666/MAGE) |
+| RetroAgent | 🌕️ [RetroAgent: From Solving to Evolving via Retrospective Dual Intrinsic Feedback](https://arxiv.org/abs/2603.08561) | 2026.3 | arXiv preprint |  |
+| IntPro | 🌕️ [IntPro: A Proxy Agent for Context-Aware Intent Understanding via Retrieval-conditioned Inference](https://arxiv.org/abs/2603.03325) | 2026.3 | arXiv preprint | [![Code](https://img.shields.io/badge/Code-GitHub-blue)](https://github.com/zhangxy-2019/RetroAgent) |
+| MetaClaw | 🌕️ [MetaClaw: Just Talk -- An Agent That Meta-Learns and Evolves in the Wild](https://arxiv.org/abs/2603.17187) | 2026.3 | arXiv preprint | [![Code](https://img.shields.io/badge/Code-GitHub-blue)](https://github.com/aiming-lab/MetaClaw) |
+
+
+#### §4.2.2 Curated Experience Base
+
+> Curated experience base methods go beyond appending new entries; they merge, revise, or replace existing ones to ensure experience reliability.
+
+
+| Abbr. | Paper | Data (1st time) | Publication | Resources |
+|-|-|:-:|:-:|:-:|
+| AgentEvolver | 🌕️ [AgentEvolver: Towards Efficient Self-Evolving Agent System](https://arxiv.org/abs/2511.10395) | 2025.11 | arXiv preprint | [![Code](https://img.shields.io/badge/Code-GitHub-blue)](https://github.com/modelscope/AgentEvolver) |
+| INSPO | 🌕️ [Agentic Policy Optimization via Instruction-Policy Co-Evolution](https://arxiv.org/abs/2512.01945) | 2025.12 | arXiv preprint | [![Code](https://img.shields.io/badge/Code-GitHub-blue)](https://github.com/cambridgeltl/inspo) |
+| SAGE_exp | 🌕️ [Reinforcement Learning for Self-Improving Agent with Skill Library](https://arxiv.org/abs/2512.17102) | 2025.12 | arXiv preprint | [![Code](https://img.shields.io/badge/Code-GitHub-blue)](https://github.com/amazon-science/SAGE) |
+| PEARL | 🌕️ [PEARL: Self-Evolving Assistant for Time Management with Reinforcement Learning](https://arxiv.org/abs/2601.11957) | 2026.1 | arXiv preprint |  |
+| BEPA | 🌕️ [From Off-Policy to On-Policy: Enhancing GUI Agents via Bi-level Expert-to-Policy Assimilation](https://arxiv.org/abs/2601.05787) | 2026.1 | arXiv preprint | [![Code](https://img.shields.io/badge/Code-GitHub-blue)](https://github.com/LEON-gittech/Verl_GUI) |
+| SkillRL | 🌕️ [SkillRL: Evolving Agents via Recursive Skill-Augmented Reinforcement Learning](https://arxiv.org/abs/2602.08234) | 2026.2 | arXiv preprint | [![Code](https://img.shields.io/badge/Code-GitHub-blue)](https://github.com/aiming-lab/SkillRL) |
+| K²-Agent | 🌕️ [K²-Agent: Co-Evolving Know-What and Know-How for Hierarchical Mobile Device Control](https://openreview.net/forum?id=9BKg0BAWrb) | 2026.2 | ICLR 2026 | [![Code](https://img.shields.io/badge/Code-GitHub-blue)](https://github.com/k2-agent/k2-agent) |
+| ARISE | 🌕️ [ARISE: Agent Reasoning with Intrinsic Skill Evolution in Hierarchical Reinforcement Learning](https://arxiv.org/abs/2603.16060) | 2026.3 | arXiv preprint | [![Code](https://img.shields.io/badge/Code-GitHub-blue)](https://github.com/Skylanding/ARISE) |
+| Comp. RL | 🌕️ [Complementary Reinforcement Learning](https://arxiv.org/abs/2603.17621) | 2026.3 | arXiv preprint | [![Code](https://img.shields.io/badge/Code-GitHub-blue)](https://github.com/pUmpKin-Co/ComplementaryRL) |
+| DGO | 🌕️ [Towards Effective Experiential Learning: Dual Guidance for Utilization and Internalization](https://arxiv.org/abs/2603.24093) | 2026.3 | arXiv preprint |  |
+| COS-PLAY | 🌕️ [Co-Evolving LLM Decision and Skill Bank Agents for Long-Horizon Tasks](https://openreview.net/forum?id=7rOaXraAOg&referrer=%5Bthe%20profile%20of%20Tianyi%20Zhou%5D(%2Fprofile%3Fid%3D~Tianyi_Zhou2)) | 2026.4 | CAIS 2026 workshop |  |
+
+
+
+#### §4.2.3 Optimized Experience Base
+
+> Optimized experience base methods bring the utility of experience into training, so that experience selection, weighting, or generation modules are shaped by policy feedback.
+
+
+| Abbr. | Paper | Data (1st time) | Publication | Resources |
+|-|-|:-:|:-:|:-:|
+| Trainable Graph Memory | 🌕️ [From Experience to Strategy: Empowering LLM Agents with Trainable Graph Memory](https://arxiv.org/abs/2511.07800) | 2025.11 | arXiv preprint |  |
+| UMEM | 🌕️ [UMEM: Unified Memory Extraction and Management Framework for Generalizable Memory](https://arxiv.org/abs/2602.10652) | 2026.2 | arXiv preprint |  |
+| SLEA-RL | 🌕️ [SLEA-RL: Step-Level Experience-Augmented Reinforcement Learning for Multi-Turn Agentic Training](https://arxiv.org/abs/2603.18079) | 2026.3 | arXiv preprint | [![Code](https://img.shields.io/badge/Code-GitHub-blue)](https://github.com/kingofspace0wzz/slea-rl/) |
+| D2Skill | 🌕️ [Dynamic Dual-Granularity Skill Bank for Agentic RL](https://arxiv.org/abs/2603.28716) | 2026.3 | arXiv preprint | [![Code](https://img.shields.io/badge/Code-GitHub-blue)](https://github.com/TU2021/D2Skill-AgenticRL) |
+| Skill-SD | 🌕️ [Skill-SD: Skill-Conditioned Self-Distillation for Multi-turn LLM Agents](https://arxiv.org/abs/2604.10674) | 2026.4 | arXiv preprint |  |
+
+### §5 Domain-specific Hints
+
+> In domain-specific settings, hint-based RL converts domain-native signals into training-time guidance.
+
+| Abbr. | Paper | Data (1st time) | Publication | Resources |
+|-|-|:-:|:-:|:-:|
+| Kevin | 🌕️ [Kevin: Multi-Turn RL for Generating CUDA Kernels](https://arxiv.org/abs/2507.11948) | 2025.7 | arXiv preprint |  |
+| WebGen-Agent | 🌕️ [WebGen-Agent: Enhancing Interactive Website Generation with Multi-Level Feedback and Step-Level Reinforcement Learning](https://arxiv.org/abs/2509.22644) | 2025.9 | arXiv preprint | [![Code](https://img.shields.io/badge/Code-GitHub-blue)](https://github.com/mnluzimu/WebGen-Agent) |
+| UI-S1 | 🌕️ [UI-S1: Advancing GUI Automation via Semi-online Reinforcement Learning](https://arxiv.org/abs/2509.11543) | 2025.9 | arXiv preprint |  |
+| CRMWeaver | 🌕️ [CRMWeaver: Building Powerful Business Agent via Agentic RL and Shared Memories](https://arxiv.org/abs/2510.25333) | 2025.10 | arXiv preprint |  |
+| TaoSR-AGRL | 🌕️ [TaoSR-AGRL: Adaptive Guided Reinforcement Learning Framework for E-commerce Search Relevance](#) | 2025.10 | WWW 2026 |  |
+| PEARL | 🌕️ [PEARL: Self-Evolving Assistant for Time Management with Reinforcement Learning](https://arxiv.org/abs/2601.11957) | 2026.1 | arXiv preprint |  |
+| C2F-Thinker | 🌕️ [C2F-Thinker: Coarse-to-Fine Reasoning with Hint-Guided Reinforcement Learning for Multimodal Sentiment Analysis](https://arxiv.org/abs/2604.00013) | 2026.3 | arXiv preprint |  |
+| SGS | 🌕️ [Scaling Self-Play with Self-Guidance](https://arxiv.org/abs/2604.20209) | 2026.4 | arXiv preprint | [![Code](https://img.shields.io/badge/Code-GitHub-blue)](https://github.com/LukeBailey181/sgs) |
+| COS-PLAY | 🌕️ [Co-Evolving LLM Decision and Skill Bank Agents for Long-Horizon Tasks](https://arxiv.org/abs/2604.20987) | 2026.4 | arXiv preprint | [![Code](https://img.shields.io/badge/Code-GitHub-blue)](https://github.com/wuxiyang1996/COS-PLAY) |
+| VeriRole | 🌕️ [VeriRole: Verifiable Role-Awareness through Hint-Guided Reinforcement Learning](https://openreview.net/forum?id=lW7kMpMj9K) | 2026.2 | ICLR 2026 | [![Code](https://img.shields.io/badge/Code-GitHub-blue)](https://github.com/FrontierLabs/VeriRole) |
+
+
+## 🌠 Contributing
+
+We welcome contributions! Please submit a Pull Request or Issue with:
+
+### 📝 Adding a Paper
+
+Use this template in your PR:
+
+```markdown
+**Paper:** [Title](arXiv link)
+**Date:** YYYY-MM-DD
+**Category:** §3.1.1 / §3.2.2 / §4.2.1 / etc.
+**Key Contribution:** One-line description
+**Hints:** Source of Hints (offline [human / base policy / teacher] or online [old policy / current policy / teacher]) and **Usage of Hints** (injection, continuation, replacement, refinement), as well as other sources, usages, or hybrid modes.
+**Code:** [GitHub link] (if available)
+```
+
+### Inclusion Criteria
+
+✅ **Include if:**
+- The method involves an explicit textual signal serving as a Hint.
+- It provides new insights, interpretations, combinations, or extensions (e.g., safety) for Hint-based RL.
+- It is a hybrid method that falls under the definition of Hint-based RL.
+
+❌**Excluded if:**
+- Pure fine-grained reward or credit assignment work.
+- Trajectory replay work.
+- Methods without a group-relative advantage mechanism.
+
+### 🌌 Other Contributions
+- 🌚 Bug fixes.
+- 🌝 Correcting descriptions.
+- 🪐 Adding new codebases or benchmarks.
 
 
 
