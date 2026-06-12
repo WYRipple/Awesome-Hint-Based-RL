@@ -18,11 +18,11 @@ While searching more aggressively within the policy's own distribution (e.g., re
 Hints address this bottleneck by injecting **external textual signals** that restore learnable contrasts within rollout groups, enabling the policy to learn from otherwise wasted samples while pushing beyond its current capability frontier.
 
 <p align="center">
-  📖 <b>Survey Paper:</b> <a href="10.13140/RG.2.2.28670.14404">A Survey on Hint-Based RLVR: Overcoming Zero-Advantage Failures with External Textual Signals</a>
+  📖 <b>Survey Paper:</b> <a href="https://www.researchgate.net/publication/406994421_A_Survey_on_Hint-Based_RLVR_Overcoming_Zero-Advantage_Failures_with_External_Textual_Signals">A Survey on Hint-Based RLVR: Overcoming Zero-Advantage Failures with External Textual Signals</a>
 </p>
 
 <p align="center">
-  🌕️ = Covered in our <a href="#">survey paper</a> &nbsp;|&nbsp; 🌒 = Indexed here, pending inclusion in the next survey revision
+  🌕️ = Covered in our <a href="https://www.researchgate.net/publication/406994421_A_Survey_on_Hint-Based_RLVR_Overcoming_Zero-Advantage_Failures_with_External_Textual_Signals">survey paper</a> &nbsp;|&nbsp; 🌒 = Indexed here, pending inclusion in the next survey revision
 </p>
 
 ## 🛸 Full Tree
