@@ -362,6 +362,23 @@ Use this template in your PR:
 - 🌝 Correcting descriptions.
 - 🪐 Adding new codebases or benchmarks.
 
+## 📄 Citation
+
+If you find this collection helpful, please consider citing our survey:
+
+```bibtex
+@article{hint-based-rl-survey,
+	doi = {10.20944/preprints202606.1050.v1},
+	url = {https://doi.org/10.20944/preprints202606.1050.v1},
+	year = 2026,
+	month = {June},
+	publisher = {Preprints},
+	author = {Wenyuan Zhang and Shuaiyi Nie and Zhengyang Ai and Chengguang Tang and Xinghua Zhang and Yi Liu and Tingwen Liu and Pinyan Lu},
+	title = {A Survey on Hint-Based RLVR: Overcoming Zero-Advantage Failures with External Textual Signals},
+	journal = {Preprints}
+}
+```
+
 
 
 
